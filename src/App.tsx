@@ -181,8 +181,8 @@ function App() {
     <div className={`app theme-${theme}`} data-theme={theme}>
       <header className="header">
         <div>
-          <h1>cobe</h1>
-          <p className="sub">drag the globe · SAT → SBN</p>
+          <h1>ND Leave No Doubt Tour 2026</h1>
+          <p className="sub">drag the globe · San Antonio → South Bend</p>
         </div>
         <div className="themes" role="group" aria-label="Theme">
           {themes.map((t) => (

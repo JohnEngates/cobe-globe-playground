@@ -1,6 +1,6 @@
-# cobe globe playground
+# ND Leave No Doubt Tour 2026
 
-A small Vite + React + TypeScript playground for [`cobe`](https://github.com/shuding/cobe) (v2): a draggable WebGL globe with San Antonio (SAT) and South Bend (SBN) markers, an SAT → SBN arc, and Notre Dame blue/gold themes (light / dark / dusk).
+Globe playground for the **ND Leave No Doubt Tour 2026**, built with Vite + React + TypeScript and [`cobe`](https://github.com/shuding/cobe) v2. Draggable globe with San Antonio → South Bend markers/arc and Notre Dame blue/gold themes.
 
 Inspired by the Cursor tech-demos cobe page.
 
