@@ -1,6 +1,6 @@
 # cobe globe playground
 
-A small Vite + React + TypeScript playground for [`cobe`](https://github.com/shuding/cobe) (v2): a draggable WebGL globe with San Francisco and New York markers, an SF → NYC arc, and light / dark / dusk themes.
+A small Vite + React + TypeScript playground for [`cobe`](https://github.com/shuding/cobe) (v2): a draggable WebGL globe with San Antonio (SAT) and South Bend (SBN) markers, an SAT → SBN arc, and Notre Dame blue/gold themes (light / dark / dusk).
 
 Inspired by the Cursor tech-demos cobe page.
 

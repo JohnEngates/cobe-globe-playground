@@ -4,8 +4,8 @@ import './App.css'
 
 type Theme = 'light' | 'dark' | 'dusk'
 
-const SF: [number, number] = [37.7749, -122.4194]
-const NYC: [number, number] = [40.7128, -74.006]
+const SAT: [number, number] = [29.4241, -98.4936]
+const SBN: [number, number] = [41.6764, -86.252]
 
 const THEMES: Record<
   Theme,
@@ -22,30 +22,30 @@ const THEMES: Record<
 > = {
   light: {
     dark: 0,
-    baseColor: [0.92, 0.92, 0.94],
-    markerColor: [0.15, 0.45, 0.95],
-    glowColor: [0.85, 0.9, 1],
-    mapBrightness: 4.5,
-    diffuse: 1.35,
-    arcColor: [0.2, 0.45, 0.95],
+    baseColor: [0.93, 0.93, 0.95],
+    markerColor: [0.788, 0.592, 0],
+    glowColor: [0.85, 0.88, 0.95],
+    mapBrightness: 4.2,
+    diffuse: 1.3,
+    arcColor: [0.047, 0.137, 0.251],
   },
   dark: {
     dark: 1,
-    baseColor: [0.12, 0.14, 0.18],
-    markerColor: [0.4, 0.85, 1],
-    glowColor: [0.25, 0.35, 0.55],
-    mapBrightness: 6.5,
-    diffuse: 1.15,
-    arcColor: [0.45, 0.85, 1],
+    baseColor: [0.047, 0.137, 0.251],
+    markerColor: [0.788, 0.592, 0],
+    glowColor: [0.12, 0.2, 0.35],
+    mapBrightness: 5.8,
+    diffuse: 1.2,
+    arcColor: [0.788, 0.592, 0],
   },
   dusk: {
-    dark: 0.55,
-    baseColor: [0.28, 0.2, 0.28],
-    markerColor: [1, 0.55, 0.35],
-    glowColor: [0.55, 0.3, 0.35],
-    mapBrightness: 5.5,
+    dark: 0.65,
+    baseColor: [0.08, 0.12, 0.22],
+    markerColor: [0.9, 0.7, 0.15],
+    glowColor: [0.25, 0.18, 0.08],
+    mapBrightness: 5.2,
     diffuse: 1.25,
-    arcColor: [1, 0.55, 0.4],
+    arcColor: [0.788, 0.592, 0],
   },
 }
 
@@ -94,14 +94,14 @@ function App() {
       arcHeight: 0.28,
       ...t,
       markers: [
-        { location: SF, size: 0.05, id: 'sf', color: t.markerColor },
-        { location: NYC, size: 0.05, id: 'nyc', color: t.markerColor },
+        { location: SAT, size: 0.05, id: 'sat', color: t.markerColor },
+        { location: SBN, size: 0.05, id: 'sbn', color: t.markerColor },
       ],
       arcs: [
         {
-          from: SF,
-          to: NYC,
-          id: 'sf-nyc',
+          from: SAT,
+          to: SBN,
+          id: 'sat-sbn',
           color: t.arcColor,
         },
       ],
@@ -137,14 +137,14 @@ function App() {
     globe.update({
       ...t,
       markers: [
-        { location: SF, size: 0.05, id: 'sf', color: t.markerColor },
-        { location: NYC, size: 0.05, id: 'nyc', color: t.markerColor },
+        { location: SAT, size: 0.05, id: 'sat', color: t.markerColor },
+        { location: SBN, size: 0.05, id: 'sbn', color: t.markerColor },
       ],
       arcs: [
         {
-          from: SF,
-          to: NYC,
-          id: 'sf-nyc',
+          from: SAT,
+          to: SBN,
+          id: 'sat-sbn',
           color: t.arcColor,
         },
       ],
@@ -182,7 +182,7 @@ function App() {
       <header className="header">
         <div>
           <h1>cobe</h1>
-          <p className="sub">drag the globe · SF → NYC</p>
+          <p className="sub">drag the globe · SAT → SBN</p>
         </div>
         <div className="themes" role="group" aria-label="Theme">
           {themes.map((t) => (
@@ -210,8 +210,8 @@ function App() {
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
           />
-          <span className="marker-label label-sf">San Francisco</span>
-          <span className="marker-label label-nyc">New York</span>
+          <span className="marker-label label-sat">San Antonio</span>
+          <span className="marker-label label-sbn">South Bend</span>
         </div>
       </main>
 

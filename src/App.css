@@ -18,18 +18,18 @@
 }
 
 .theme-light {
-  background: radial-gradient(1200px 700px at 50% 20%, #eef3ff 0%, #f7f8fb 45%, #edf0f5 100%);
-  color: #12141a;
+  background: radial-gradient(1200px 700px at 50% 20%, #f4f1e6 0%, #f7f8fb 45%, #ebe7dc 100%);
+  color: #0c2340;
 }
 
 .theme-dark {
-  background: radial-gradient(1200px 700px at 50% 10%, #1a2338 0%, #0b0f18 50%, #07090f 100%);
-  color: #e8eefc;
+  background: radial-gradient(1200px 700px at 50% 10%, #0c2340 0%, #081628 50%, #050d18 100%);
+  color: #f5e6b8;
 }
 
 .theme-dusk {
-  background: radial-gradient(1100px 650px at 50% 15%, #4a2a3a 0%, #1c1220 48%, #0d0a12 100%);
-  color: #ffe8dc;
+  background: radial-gradient(1100px 650px at 50% 15%, #1a3358 0%, #0c2340 48%, #08101c 100%);
+  color: #e8c86a;
 }
 
 .header {
@@ -125,32 +125,32 @@
 }
 
 @supports (anchor-name: --x) {
-  .label-sf {
-    position-anchor: --cobe-sf;
+  .label-sat {
+    position-anchor: --cobe-sat;
     bottom: anchor(top);
     left: anchor(center);
     translate: -50% -10px;
-    opacity: var(--cobe-visible-sf, 0);
-    filter: blur(calc((1 - var(--cobe-visible-sf, 0)) * 6px));
+    opacity: var(--cobe-visible-sat, 0);
+    filter: blur(calc((1 - var(--cobe-visible-sat, 0)) * 6px));
   }
 
-  .label-nyc {
-    position-anchor: --cobe-nyc;
+  .label-sbn {
+    position-anchor: --cobe-sbn;
     bottom: anchor(top);
     left: anchor(center);
     translate: -50% -10px;
-    opacity: var(--cobe-visible-nyc, 0);
-    filter: blur(calc((1 - var(--cobe-visible-nyc, 0)) * 6px));
+    opacity: var(--cobe-visible-sbn, 0);
+    filter: blur(calc((1 - var(--cobe-visible-sbn, 0)) * 6px));
   }
 }
 
 @supports not (anchor-name: --x) {
-  .label-sf {
+  .label-sat {
     top: 38%;
     left: 28%;
   }
 
-  .label-nyc {
+  .label-sbn {
     top: 34%;
     right: 22%;
   }
