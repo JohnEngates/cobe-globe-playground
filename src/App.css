@@ -1,0 +1,170 @@
+.app {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 24px 40px;
+  box-sizing: border-box;
+  transition: background 0.35s ease, color 0.35s ease;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.theme-light {
+  background: radial-gradient(1200px 700px at 50% 20%, #eef3ff 0%, #f7f8fb 45%, #edf0f5 100%);
+  color: #12141a;
+}
+
+.theme-dark {
+  background: radial-gradient(1200px 700px at 50% 10%, #1a2338 0%, #0b0f18 50%, #07090f 100%);
+  color: #e8eefc;
+}
+
+.theme-dusk {
+  background: radial-gradient(1100px 650px at 50% 15%, #4a2a3a 0%, #1c1220 48%, #0d0a12 100%);
+  color: #ffe8dc;
+}
+
+.header {
+  width: min(820px, 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.sub {
+  margin: 8px 0 0;
+  opacity: 0.65;
+  font-size: 0.95rem;
+}
+
+.themes {
+  display: inline-flex;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.themes button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  opacity: 0.65;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+}
+
+.themes button.active {
+  opacity: 1;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.stage {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.globe-wrap {
+  position: relative;
+  max-width: 100%;
+  touch-action: none;
+}
+
+.globe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  border-radius: 50%;
+}
+
+.globe:active {
+  cursor: grabbing;
+}
+
+.marker-label {
+  position: absolute;
+  pointer-events: none;
+  font-size: 0.78rem;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: color-mix(in srgb, canvas 70%, transparent);
+  color: inherit;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  backdrop-filter: blur(8px);
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+@supports (anchor-name: --x) {
+  .label-sf {
+    position-anchor: --cobe-sf;
+    bottom: anchor(top);
+    left: anchor(center);
+    translate: -50% -10px;
+    opacity: var(--cobe-visible-sf, 0);
+    filter: blur(calc((1 - var(--cobe-visible-sf, 0)) * 6px));
+  }
+
+  .label-nyc {
+    position-anchor: --cobe-nyc;
+    bottom: anchor(top);
+    left: anchor(center);
+    translate: -50% -10px;
+    opacity: var(--cobe-visible-nyc, 0);
+    filter: blur(calc((1 - var(--cobe-visible-nyc, 0)) * 6px));
+  }
+}
+
+@supports not (anchor-name: --x) {
+  .label-sf {
+    top: 38%;
+    left: 28%;
+  }
+
+  .label-nyc {
+    top: 34%;
+    right: 22%;
+  }
+}
+
+.footer {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  opacity: 0.55;
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: inherit;
+}
