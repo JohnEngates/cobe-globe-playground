@@ -48,12 +48,12 @@
 
 .header h1 {
   margin: 0;
-  font-size: clamp(1.15rem, 2.8vw, 1.65rem);
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.25;
-  max-width: none;
-  text-wrap: pretty;
+  line-height: 1.2;
+  max-width: min(28rem, 100%);
+  white-space: normal;
 }
 
 .sub {
@@ -149,6 +149,15 @@
     opacity: var(--cobe-visible-sbn, 0);
     filter: blur(calc((1 - var(--cobe-visible-sbn, 0)) * 6px));
   }
+
+  .label-grb {
+    position-anchor: --cobe-grb;
+    bottom: anchor(top);
+    left: anchor(center);
+    translate: -50% -10px;
+    opacity: var(--cobe-visible-grb, 0);
+    filter: blur(calc((1 - var(--cobe-visible-grb, 0)) * 6px));
+  }
 }
 
 @supports not (anchor-name: --x) {
@@ -160,6 +169,11 @@
   .label-sbn {
     top: 34%;
     right: 22%;
+  }
+
+  .label-grb {
+    top: 28%;
+    right: 30%;
   }
 }
 

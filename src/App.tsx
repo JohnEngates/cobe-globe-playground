@@ -6,6 +6,7 @@ type Theme = 'light' | 'dark' | 'dusk'
 
 const SAT: [number, number] = [29.4241, -98.4936]
 const SBN: [number, number] = [41.6764, -86.252]
+const GRB: [number, number] = [44.5133, -88.0133]
 
 const THEMES: Record<
   Theme,
@@ -96,12 +97,19 @@ function App() {
       markers: [
         { location: SAT, size: 0.05, id: 'sat', color: t.markerColor },
         { location: SBN, size: 0.05, id: 'sbn', color: t.markerColor },
+        { location: GRB, size: 0.05, id: 'grb', color: t.markerColor },
       ],
       arcs: [
         {
           from: SAT,
           to: SBN,
           id: 'sat-sbn',
+          color: t.arcColor,
+        },
+        {
+          from: SAT,
+          to: GRB,
+          id: 'sat-grb',
           color: t.arcColor,
         },
       ],
@@ -139,12 +147,19 @@ function App() {
       markers: [
         { location: SAT, size: 0.05, id: 'sat', color: t.markerColor },
         { location: SBN, size: 0.05, id: 'sbn', color: t.markerColor },
+        { location: GRB, size: 0.05, id: 'grb', color: t.markerColor },
       ],
       arcs: [
         {
           from: SAT,
           to: SBN,
           id: 'sat-sbn',
+          color: t.arcColor,
+        },
+        {
+          from: SAT,
+          to: GRB,
+          id: 'sat-grb',
           color: t.arcColor,
         },
       ],
@@ -181,8 +196,8 @@ function App() {
     <div className={`app theme-${theme}`} data-theme={theme}>
       <header className="header">
         <div>
-          <h1>ND Leave No Doubt<br />Tour 2026</h1>
-          <p className="sub">drag the globe · San Antonio → South Bend</p>
+          <h1>ND Leave No Doubt Tour 2026</h1>
+          <p className="sub">drag the globe</p>
         </div>
         <div className="themes" role="group" aria-label="Theme">
           {themes.map((t) => (
@@ -212,6 +227,7 @@ function App() {
           />
           <span className="marker-label label-sat">San Antonio</span>
           <span className="marker-label label-sbn">South Bend</span>
+          <span className="marker-label label-grb">Green Bay</span>
         </div>
       </main>
 
